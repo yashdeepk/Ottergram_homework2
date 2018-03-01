@@ -31,6 +31,9 @@ function addThumbClickHandler(thumb) {
   "use strict";
   thumb.addEventListener("click", function(event) {
     event.preventDefault();
+    var index=parseInt(thumb.getAttribute("data-index"));
+    document.getElementById("prev").setAttribute("data-i",(index-1));
+    document.getElementById("next").setAttribute("data-i",(index+1));
     setDetailsFromThumb(thumb);
   });
 }
